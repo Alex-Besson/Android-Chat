@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "744283174722",
+    "firebase_url": "https://androidchat-acd00.firebaseio.com",
+    "project_id": "androidchat-acd00",
+    "storage_bucket": "androidchat-acd00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744283174722:android:b72d8746fd0d6aea",
+        "android_client_info": {
+          "package_name": "codes.besson.androidchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744283174722-0uc7jj8jgifb3aouhnccsv9vcmocj0tt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu1_cZUjM6oxeyednU9n0CohZz3Ql-F_w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
