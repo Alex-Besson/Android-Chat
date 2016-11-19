@@ -1,10 +1,11 @@
-package codes.besson.androidchat;
+package codes.besson.androidchat.Activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -34,6 +35,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import codes.besson.androidchat.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -216,7 +219,27 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 });
 
             } else {
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+
+                                showProgress(false);
+
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(LoginActivity.this, "Failed to Authenticate",
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Intent intent = new Intent(getBaseContext(), ChatActivity.class);
+                                    startActivity(intent);
+                                }
+
+                            }
+                        });
             }
 
         }
